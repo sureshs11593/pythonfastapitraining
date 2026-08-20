@@ -1,0 +1,3 @@
+This line is creating a SQLAlchemy Engine object by calling create_engine() with DATABASE_URL as the database connection string. The result is assigned to engine, which becomes the central object used for issuing SQL statements and managing connections in the app.
+
+The connect_args={"check_same_thread": False} part is specific to SQLite. By default, SQLite enforces that connections are used only in the same thread that created them. Setting check_same_thread to False disables that check, allowing the same connection object to be used across different threads. That is often needed in web application contexts where the database engine may be accessed from multiple worker threads.
